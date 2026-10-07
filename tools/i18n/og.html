@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- Open Graph image (1200×630), one per language: python3 tools/build-i18n.py --og -->
+<html lang="{{@lang}}">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "Inter"; src: url("../../assets/fonts/inter-var-latin.woff2") format("woff2"); font-weight: 100 900; }
+html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+body {
+  position: relative; color: #1D1A17;
+  font-family: Inter, "Hiragino Sans", "Apple SD Gothic Neo", sans-serif;
+  background: radial-gradient(60% 75% at 92% 70%, rgba(217, 116, 58, .14), transparent 70%), #FBFAF8;
+}
+.brand { position: absolute; left: 72px; top: 62px; display: flex; align-items: center; gap: 14px; font-size: 27px; font-weight: 600; letter-spacing: -.02em; }
+.brand svg { width: 42px; height: 42px; }
+.copy { position: absolute; left: 72px; top: 128px; bottom: 30px; width: 780px; display: flex; flex-direction: column; justify-content: center; }
+h1 { margin: 0; font-size: 98px; line-height: 1.02; font-weight: 700; letter-spacing: -.045em; }
+h1 span { display: block; white-space: nowrap; }
+h1 .l3 { background: linear-gradient(100deg, #A9481A 0%, #BC5A24 50%, #C8652C 100%); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .06em; }
+:lang(ja) h1, :lang(ko) h1 { letter-spacing: 0; line-height: 1.12; }
+.sub { max-width: 690px; margin: 36px 0 0; font-size: 26px; color: #6B645D; letter-spacing: -.01em; }
+.url { margin: 26px 0 0; font-size: 24px; font-weight: 600; color: #B5571F; }
+.phone { position: absolute; left: 852px; top: 112px; width: 300px; height: 640px; padding: 12px; box-sizing: border-box; border-radius: 52px; background: #1D1A17; transform: rotate(7deg); transform-origin: 0 0; box-shadow: 0 0 0 2px #D9D3CC, 0 40px 80px -30px rgba(40, 25, 10, .45); }
+.phone img { display: block; width: 100%; border-radius: 41px; }
+</style>
+</head>
+<body>
+<div class="brand"><svg viewBox="190 140 644 744" aria-hidden="true"><g transform="translate(0 -28)"><path d="M252 600L252 360A130 130 0 0 1 512 360L512 470A130 130 0 0 0 772 470L772 230M772 470L772 690C772 800 712 850 610 850" fill="none" stroke="#1D1A17" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/><circle fill="#D9743A" cx="480" cy="850" r="52"/></g></svg>Not Yet</div>
+<div class="copy">
+  <h1><span>{{home.claim_1}}</span><span>{{home.claim_2}}</span><span class="l3">{{home.claim_3}}</span></h1>
+  <p class="sub">{{home.og_sub}}</p>
+  <p class="url">not-yet.app</p>
+</div>
+<div class="phone"><img src="../../assets/img/home-light-720.webp" alt=""></div>
+<script>
+// Long claims: shrink until every line fits next to the phone and the text block fits the height.
+const h1 = document.querySelector('h1'), copy = document.querySelector('.copy');
+let size = 98;
+while (size > 48 && ([...h1.children].some(s => s.scrollWidth > 780) || copy.scrollHeight > copy.clientHeight)) h1.style.fontSize = (size -= 2) + 'px';
+</script>
+</body>
+</html>
