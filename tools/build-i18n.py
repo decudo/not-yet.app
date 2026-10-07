@@ -154,13 +154,11 @@ def build():
                      lambda m: ''.join(render(m.group(1), c, name, '') for c in LANGS), tpl, flags=re.S)
         write(rel, render(tpl, 'en', name, ''))
     today = datetime.date.today().isoformat()
-    urls = []
-    for path in PAGES.values():
-        links = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{META[c]["hreflang"]}" href="{url(c, path)}"/>' for c in LANGS)
-        links += f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{url("en", path)}"/>'
-        urls += [f'  <url>\n    <loc>{url(c, path)}</loc>\n    <lastmod>{today}</lastmod>{links}\n  </url>' for c in LANGS]
+    # Plain URL list; the language alternates (hreflang) live in every page's <head>.
+    urls = [f'  <url>\n    <loc>{url(c, path)}</loc>\n    <lastmod>{today}</lastmod>\n  </url>'
+            for path in PAGES.values() for c in LANGS]
     write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n'
-          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
           + '\n'.join(urls) + '\n</urlset>\n')
     print(f'Built {len(PAGES) * len(LANGS)} pages, 404.html, t/index.html and sitemap.xml for {", ".join(LANGS)}.')
 
