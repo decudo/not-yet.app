@@ -105,11 +105,11 @@ Check after entering the ID: open the page; in DevTools (Network) `s.js` must lo
 
 ## Deploy to GitHub Pages
 
-Repo: **STACK25/not-yet.app** (public), branch `main`, folder `/ (root)`.
+Repo: **decudo/not-yet.app** (public), branch `main`, folder `/ (root)`.
 
 1. Push to `main`.
 2. **Enable Pages:** repo → Settings → Pages → Source "Deploy from a branch", branch `main`, `/ (root)`.
-3. **Verify the domain** (to prevent takeover by other repos): GitHub → organization STACK25 → Settings → Pages → "Add a domain" → `not-yet.app`, create the displayed TXT record in Cloudflare.
+3. **Verify the domain** (to prevent takeover by other repos): GitHub → organization decudo → Settings → Pages → "Add a domain" → `not-yet.app`, create the displayed TXT record in Cloudflare.
 4. **Cloudflare DNS** (zone `not-yet.app`), all records **"DNS only" (grey cloud), no proxy**:
 
    | Type | Name | Content |
@@ -122,7 +122,7 @@ Repo: **STACK25/not-yet.app** (public), branch `main`, folder `/ (root)`.
    | AAAA | `@` | `2606:50c0:8001::153` |
    | AAAA | `@` | `2606:50c0:8002::153` |
    | AAAA | `@` | `2606:50c0:8003::153` |
-   | CNAME | `www` | `stack25.github.io` |
+   | CNAME | `www` | `decudo.github.io` |
 
 5. **Custom domain:** repo → Settings → Pages → Custom domain `not-yet.app` (already in `CNAME`). Wait until the DNS check is green and the certificate is issued, then tick **"Enforce HTTPS"**.
 6. **Email:** Cloudflare → Email → enable Email Routing (creates MX/TXT itself), rule `info@not-yet.app` → your own mailbox. The MX records do not interfere with Pages.
