@@ -27,6 +27,7 @@ I18N = ROOT / 'tools' / 'i18n'
 SITE = 'https://not-yet.app/'
 LANGS = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ja', 'ko']  # en at /, the rest at /<code>/
 PAGES = {'index': '', 'privacy': 'privacy/', 'imprint': 'imprint/', 'support': 'support/'}
+NOINDEX = {'privacy', 'imprint'}  # meta robots noindex in their templates, left out of the sitemap
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 TESTFLIGHT = 'https://testflight.apple.com/join/B2FAqBDZ'  # public link, website-only tester group (100 seats)
 
@@ -156,7 +157,7 @@ def build():
     today = datetime.date.today().isoformat()
     # Plain URL list; the language alternates (hreflang) live in every page's <head>.
     urls = [f'  <url>\n    <loc>{url(c, path)}</loc>\n    <lastmod>{today}</lastmod>\n  </url>'
-            for path in PAGES.values() for c in LANGS]
+            for page, path in PAGES.items() if page not in NOINDEX for c in LANGS]
     write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n'
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
           + '\n'.join(urls) + '\n</urlset>\n')
