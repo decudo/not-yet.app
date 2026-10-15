@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["88856Y29Z8.com.decudo.notyet"],
+        "components": [
+          {
+            "/": "/t/*",
+            "comment": "NFC tags (P42): https://not-yet.app/t/<tagId> opens Not Yet"
+          }
+        ]
+      }
+    ]
+  }
+}

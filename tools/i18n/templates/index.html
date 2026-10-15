@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="{{@lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://a.not-yet.app; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://a.not-yet.app; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="apple-itunes-app" content="app-id=6815270832">
+<title>{{home.title}}</title>
+<meta name="description" content="{{home.description}}">
+<link rel="canonical" href="{{@url}}">
+{{@alternates}}
+<meta name="theme-color" content="#FBFAF8">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Not Yet">
+<meta property="og:title" content="{{home.og_title}}">
+<meta property="og:description" content="{{home.description}}">
+<meta property="og:url" content="{{@url}}">
+<meta property="og:image" content="{{@og_image}}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{common.og_alt}}">
+{{@og_locale}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="{{home.description}}">
+{{@redirect}}<script src="/assets/js/theme-init.js"></script>
+<link rel="preload" href="/assets/fonts/fraunces-soft-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces-soft-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/home.css">
+<script src="/assets/js/site.js" defer></script>
+<!-- Self-hosted, cookieless Umami: this website only, the app itself sends nothing.
+     Tracker origin and website ID are the constants at the top of /assets/a.js. -->
+<script defer src="/assets/a.js"></script>
+<script src="/assets/js/home.js" defer></script>
+<script type="application/ld+json">{{@jsonld}}</script>
+</head>
+<body class="home">
+<a class="skip" href="#main">{{common.skip}}</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="{{@root}}" aria-label="{{common.home_label}}"><svg viewBox="190 140 644 744" aria-hidden="true" focusable="false"><g transform="translate(0 -28)"><path d="M252 600L252 360A130 130 0 0 1 512 360L512 470A130 130 0 0 0 772 470L772 230M772 470L772 690C772 800 712 850 610 850" fill="none" stroke="currentColor" stroke-width="104" stroke-linecap="round" stroke-linejoin="round"/><circle class="ny-dot" cx="480" cy="850" r="52"/></g></svg><span>Not Yet</span></a>
+    <nav aria-label="{{home.nav_label}}"><ul class="navlinks"><li><a href="#pillars">{{home.nav_overview}}</a></li><li><a href="#day">{{home.nav_day}}</a></li><li><a href="#rotation">{{home.nav_rotation}}</a></li><li><a href="#faq">{{home.nav_faq}}</a></li></ul></nav>
+    <div class="tools">
+      {{@langmenu}}
+      <button type="button" class="themebtn" id="theme-toggle" aria-pressed="false" aria-label="{{common.dark_mode}}" data-umami-event="theme-toggle"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg></button>
+      <a class="btn sm" href="{{@appstore}}" {{@evs:nav}}>{{common.get_app}}</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <h1 id="hero-title"><span>{{home.claim_1}}</span> <em><span>{{home.claim_2}}</span> <span class="l2">{{home.claim_3}}</span></em></h1>
+    <p class="sub"><b>{{home.adhd}}</b> {{home.hero_sub}}</p>
+    <div class="hero-cta">
+      <a class="badge" href="{{@appstore}}" {{@evs:hero}}><img src="/assets/img/app-store-badge-{{@code}}.svg" alt="{{common.store_badge_alt}}" width="120" height="40"></a>
+      <a class="more" href="#day">{{home.hero_more}}</a>
+    </div>
+    <p class="plat"><span class="for">{{home.plat_for}}</span> <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true" focusable="false"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 5h3" stroke-linecap="round"/></svg>iPhone</span><span class="dot" aria-hidden="true">·</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 6.5 9.3 2.5h5.4l.8 4M8.5 17.5l.8 4h5.4l.8-4"/><rect x="6" y="6" width="12" height="12" rx="3.4"/></svg>Apple Watch</span><span class="dot" aria-hidden="true">·</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4.5 17.5a7.5 7.5 0 0 1 15 0Z" stroke-linejoin="round"/><path d="M7.3 8.6 5.6 6M16.7 8.6 18.4 6"/><circle cx="9.2" cy="13.9" r=".6" fill="currentColor"/><circle cx="14.8" cy="13.9" r=".6" fill="currentColor"/></svg>{{home.plat_android}}</span></p>
+  </div>
+  <div class="shots" role="group" aria-label="{{home.fan_label}}">
+    <div class="hp o"><div class="scr"><img src="/assets/img/{{@code}}/alarm-720.webp" srcset="/assets/img/{{@code}}/alarm-360.webp 360w, /assets/img/{{@code}}/alarm-720.webp 720w" sizes="(max-width: 760px) 130px, 230px" alt="{{home.alt_hero_alarm}}" width="720" height="1565" loading="lazy" decoding="async"></div></div>
+    <div class="hp s"><div class="scr"><img src="/assets/img/{{@code}}/boss-720.webp" srcset="/assets/img/{{@code}}/boss-360.webp 360w, /assets/img/{{@code}}/boss-720.webp 720w" sizes="(max-width: 760px) 130px, 230px" alt="{{home.alt_hero_boss}}" width="720" height="1565" loading="lazy" decoding="async"></div></div>
+    <div class="hp c"><div class="scr"><img src="/assets/img/{{@code}}/home-720.webp" srcset="/assets/img/{{@code}}/home-360.webp 360w, /assets/img/{{@code}}/home-720.webp 720w" sizes="(max-width: 760px) 170px, 300px" alt="{{home.alt_hero_home}}" width="720" height="1565" fetchpriority="high" decoding="async"></div></div>
+    <div class="hp s"><div class="scr"><img src="/assets/img/{{@code}}/week-720.webp" srcset="/assets/img/{{@code}}/week-360.webp 360w, /assets/img/{{@code}}/week-720.webp 720w" sizes="(max-width: 760px) 130px, 230px" alt="{{home.alt_hero_week}}" width="720" height="1565" loading="lazy" decoding="async"></div></div>
+    <div class="hp o"><div class="scr"><img src="/assets/img/{{@code}}/nights-720.webp" srcset="/assets/img/{{@code}}/nights-360.webp 360w, /assets/img/{{@code}}/nights-720.webp 720w" sizes="(max-width: 760px) 130px, 230px" alt="{{home.alt_hero_nights}}" width="720" height="1565" loading="lazy" decoding="async"></div></div>
+  </div>
+</section>
+
+<section id="pillars" class="sec" aria-labelledby="pillars-title">
+  <div class="wrap">
+    <div class="sechead reveal">
+      <p class="eyebrow">{{home.pillars_eyebrow}}</p>
+      <h2 id="pillars-title">{{home.pillars_title}}</h2>
+      <p class="lead">{{home.pillars_lead}}</p>
+    </div>
+    <div class="bento3">
+      <article class="tile pillar reveal">
+        <div class="txt">
+          <p class="tag">{{home.start_tag}}</p>
+          <h3>{{home.start_title}}</h3>
+          <ul>
+            <li><b>{{home.start_alarm}}</b><span>{{home.start_alarm_text}}</span></li>
+            <li><b>{{home.start_noapp}}</b><span>{{home.start_noapp_text}}</span></li>
+          </ul>
+        </div>
+        <div class="peek bottom"><div class="iphone"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/alarm-720.webp" srcset="/assets/img/{{@code}}/alarm-360.webp 360w, /assets/img/{{@code}}/alarm-720.webp 720w" sizes="(max-width: 1000px) 46vw, 250px" alt="" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+      </article>
+      <article class="tile pillar reveal">
+        <div class="txt">
+          <p class="tag">{{home.stay_tag}}</p>
+          <h3>{{home.stay_title}}</h3>
+          <ul>
+            <li><b>{{home.stay_rotation}}</b><span>{{home.stay_rotation_text}}</span></li>
+            <li><b>Focus lock</b><span>{{home.stay_focus_text}}</span></li>
+            <li><b>{{home.stay_coins}}</b><span>{{home.stay_coins_text}}</span></li>
+          </ul>
+        </div>
+        <div class="peek"><div class="iphone"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/focus-720.webp" srcset="/assets/img/{{@code}}/focus-360.webp 360w, /assets/img/{{@code}}/focus-720.webp 720w" sizes="(max-width: 1000px) 46vw, 250px" alt="" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+      </article>
+      <article class="tile pillar reveal">
+        <div class="txt">
+          <p class="tag">{{home.stop_tag}}</p>
+          <h3>{{home.stop_title}}</h3>
+          <ul>
+            <li><b>{{home.stop_nights}}</b><span>{{home.stop_nights_text}}</span></li>
+            <li><b>Adult sites</b><span>{{home.stop_adult_text}}</span></li>
+          </ul>
+        </div>
+        <div class="peek"><div class="iphone"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/nights-720.webp" srcset="/assets/img/{{@code}}/nights-360.webp 360w, /assets/img/{{@code}}/nights-720.webp 720w" sizes="(max-width: 1000px) 46vw, 250px" alt="" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="day" class="sec" aria-labelledby="day-title">
+  <div class="wrap">
+    <div class="sechead reveal">
+      <p class="eyebrow">{{home.day_eyebrow}}</p>
+      <h2 id="day-title">{{home.day_title}}</h2>
+    </div>
+    <ol class="days" tabindex="0" aria-labelledby="day-title">
+      <li class="day reveal">
+        <time datetime="06:15">6:15</time>
+        <h3>{{home.day1_title}}</h3>
+        <p>{{home.day1_text}}</p>
+        <a class="more" href="{{@page:alarm}}">{{home.more_alarm}}</a>
+        <div class="crop bottom"><div class="iphone"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/alarm-720.webp" srcset="/assets/img/{{@code}}/alarm-360.webp 360w, /assets/img/{{@code}}/alarm-720.webp 720w" sizes="(max-width: 760px) 50vw, 220px" alt="{{home.alt_alarm}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+      </li>
+      <li class="day reveal">
+        <time datetime="07:00">7:00</time>
+        <h3>{{home.day2_title}}</h3>
+        <p>{{home.day2_text}}</p>
+        <div class="crop bottom"><div class="iphone"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/lock-720.webp" srcset="/assets/img/{{@code}}/lock-360.webp 360w, /assets/img/{{@code}}/lock-720.webp 720w" sizes="(max-width: 760px) 50vw, 220px" alt="{{home.alt_lock}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+      </li>
+      <li class="day reveal">
+        <time datetime="09:00">9:00</time>
+        <h3>{{home.day3_title}}</h3>
+        <p>{{home.day3_text}}</p>
+        <a class="more" href="{{@page:applock}}">{{home.more_locks}}</a>
+        <div class="crop"><div class="iphone"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/focus-720.webp" srcset="/assets/img/{{@code}}/focus-360.webp 360w, /assets/img/{{@code}}/focus-720.webp 720w" sizes="(max-width: 760px) 50vw, 220px" alt="{{home.alt_focus}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+      </li>
+      <li class="day reveal">
+        <time datetime="15:30">15:30</time>
+        <h3>{{home.day4_title}}</h3>
+        <p>{{home.day4_text}}</p>
+        <div class="crop"><div class="iphone"><div class="bezel"><div class="glass"><img class="only-light" src="/assets/img/{{@code}}/sidequest-light-720.webp" srcset="/assets/img/{{@code}}/sidequest-light-360.webp 360w, /assets/img/{{@code}}/sidequest-light-720.webp 720w" sizes="(max-width: 760px) 50vw, 220px" alt="{{home.alt_sidequest}}" width="720" height="1565" loading="lazy" decoding="async"><img class="only-dark" src="/assets/img/{{@code}}/sidequest-dark-720.webp" srcset="/assets/img/{{@code}}/sidequest-dark-360.webp 360w, /assets/img/{{@code}}/sidequest-dark-720.webp 720w" sizes="(max-width: 760px) 50vw, 220px" alt="{{home.alt_sidequest}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+      </li>
+      <li class="day reveal">
+        <time datetime="19:00">19:00</time>
+        <h3>{{home.day5_title}}</h3>
+        <p>{{home.day5_text}}</p>
+        <div class="crop"><div class="iphone"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/piggy-720.webp" srcset="/assets/img/{{@code}}/piggy-360.webp 360w, /assets/img/{{@code}}/piggy-720.webp 720w" sizes="(max-width: 760px) 50vw, 220px" alt="{{home.alt_runend}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+      </li>
+      <li class="day reveal">
+        <time datetime="21:00">21:00</time>
+        <h3>{{home.day6_title}}</h3>
+        <p>{{home.day6_text}}</p>
+        <a class="more" href="{{@page:nights}}">{{home.more_nights}}</a>
+        <div class="crop"><div class="iphone"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/nights-720.webp" srcset="/assets/img/{{@code}}/nights-360.webp 360w, /assets/img/{{@code}}/nights-720.webp 720w" sizes="(max-width: 760px) 50vw, 220px" alt="{{home.alt_nights}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="rotation" class="sec" aria-labelledby="rotation-title">
+  <div class="wrap">
+    <div class="sechead reveal">
+      <p class="eyebrow">{{home.rot_eyebrow}}</p>
+      <h2 id="rotation-title">{{home.rot_title_1}} <span class="grad">{{home.rot_title_2}}</span></h2>
+      <p class="lead">{{home.rot_lead}}</p>
+    </div>
+    <div class="rot">
+      <div class="seg" role="group" aria-label="{{home.rot_label}}">
+        <button type="button" aria-pressed="true" data-gesture="{{home.gesture_wheel}}">Wheel</button>
+        <button type="button" aria-pressed="false" data-gesture="{{home.gesture_ticket}}">Ticket</button>
+        <button type="button" aria-pressed="false" data-gesture="{{home.gesture_tally}}">Tally</button>
+        <button type="button" aria-pressed="false" data-gesture="{{home.gesture_rocket}}">Rocket</button>
+      </div>
+      <div class="iphone reveal"><div class="bezel"><div class="glass" id="rotglass">
+        <div class="shot on"><img class="only-light" src="/assets/img/wheel-light-720.webp" srcset="/assets/img/wheel-light-360.webp 360w, /assets/img/wheel-light-720.webp 720w" sizes="(max-width: 846px) 220px, (max-width: 1270px) 26vw, 330px" alt="{{home.alt_rot_wheel}}" width="720" height="1565" loading="lazy" decoding="async"><img class="only-dark" src="/assets/img/wheel-dark-720.webp" srcset="/assets/img/wheel-dark-360.webp 360w, /assets/img/wheel-dark-720.webp 720w" sizes="(max-width: 846px) 220px, (max-width: 1270px) 26vw, 330px" alt="{{home.alt_rot_wheel}}" width="720" height="1565" loading="lazy" decoding="async"></div>
+        <div class="shot" aria-hidden="true"><img class="only-light" src="/assets/img/ticket-light-720.webp" srcset="/assets/img/ticket-light-360.webp 360w, /assets/img/ticket-light-720.webp 720w" sizes="(max-width: 846px) 220px, (max-width: 1270px) 26vw, 330px" alt="{{home.alt_rot_ticket}}" width="720" height="1565" loading="lazy" decoding="async"><img class="only-dark" src="/assets/img/ticket-dark-720.webp" srcset="/assets/img/ticket-dark-360.webp 360w, /assets/img/ticket-dark-720.webp 720w" sizes="(max-width: 846px) 220px, (max-width: 1270px) 26vw, 330px" alt="{{home.alt_rot_ticket}}" width="720" height="1565" loading="lazy" decoding="async"></div>
+        <div class="shot" aria-hidden="true"><img class="only-light" src="/assets/img/tally-light-720.webp" srcset="/assets/img/tally-light-360.webp 360w, /assets/img/tally-light-720.webp 720w" sizes="(max-width: 846px) 220px, (max-width: 1270px) 26vw, 330px" alt="{{home.alt_rot_tally}}" width="720" height="1565" loading="lazy" decoding="async"><img class="only-dark" src="/assets/img/tally-dark-720.webp" srcset="/assets/img/tally-dark-360.webp 360w, /assets/img/tally-dark-720.webp 720w" sizes="(max-width: 846px) 220px, (max-width: 1270px) 26vw, 330px" alt="{{home.alt_rot_tally}}" width="720" height="1565" loading="lazy" decoding="async"></div>
+        <div class="shot" aria-hidden="true"><img class="only-light" src="/assets/img/rocket-light-720.webp" srcset="/assets/img/rocket-light-360.webp 360w, /assets/img/rocket-light-720.webp 720w" sizes="(max-width: 846px) 220px, (max-width: 1270px) 26vw, 330px" alt="{{home.alt_rot_rocket}}" width="720" height="1565" loading="lazy" decoding="async"><img class="only-dark" src="/assets/img/rocket-dark-720.webp" srcset="/assets/img/rocket-dark-360.webp 360w, /assets/img/rocket-dark-720.webp 720w" sizes="(max-width: 846px) 220px, (max-width: 1270px) 26vw, 330px" alt="{{home.alt_rot_rocket}}" width="720" height="1565" loading="lazy" decoding="async"></div>
+      </div></div></div>
+      <div class="rot-meta">
+        <p class="gesture" id="gesture">{{home.gesture_wheel}}</p>
+        <button type="button" class="shufflebtn" id="shuffle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>{{home.rot_shuffle}}</button>
+      </div>
+      <p class="rot-more">{{home.rot_more}}</p>
+      <p class="rot-more"><a class="more" href="{{@page:routines}}">{{home.more_routines}}</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="stance" class="sec" aria-labelledby="stance-title">
+  <div class="wrap">
+    <div class="sechead">
+      <p class="eyebrow">{{home.stance_eyebrow}}</p>
+      <h2 id="stance-title">{{home.stance_title}}</h2>
+    </div>
+    <ul class="lines">
+      <li class="line"><del><span class="sr-only">{{home.stance_not}}</span><span class="strike">{{home.stance1_no}}</span></del><ins><span class="sr-only">{{home.stance_says}}</span>{{home.stance1_yes}}</ins></li>
+      <li class="line"><del><span class="sr-only">{{home.stance_not}}</span><span class="strike">{{home.stance2_no}}</span></del><ins><span class="sr-only">{{home.stance_says}}</span>{{home.stance2_yes}}</ins></li>
+      <li class="line"><del><span class="sr-only">{{home.stance_not}}</span><span class="strike">{{home.stance3_no}}</span></del><ins><span class="sr-only">{{home.stance_says}}</span>{{home.stance3_yes}}</ins></li>
+      <li class="line"><del><span class="sr-only">{{home.stance_not}}</span><span class="strike">{{home.stance4_no}}</span></del><ins><span class="sr-only">{{home.stance_says}}</span>{{home.stance4_yes}}</ins></li>
+      <li class="line"><del><span class="sr-only">{{home.stance_not}}</span><span class="strike">{{home.stance5_no}}</span></del><ins><span class="sr-only">{{home.stance_says}}</span>{{home.stance5_yes}}</ins></li>
+    </ul>
+  </div>
+</section>
+
+<section id="features" class="sec" aria-labelledby="features-title">
+  <div class="wrap">
+    <div class="sechead reveal">
+      <p class="eyebrow">{{home.feat_eyebrow}}</p>
+      <h2 id="features-title">{{home.feat_title}}</h2>
+    </div>
+    <div class="bento">
+      <article class="ftile wide weektile reveal">
+        <div class="txt"><h3>{{home.week_title}}</h3><p>{{home.week_text}}</p><a class="more" href="{{@page:week}}">{{home.more_week}}</a></div>
+        <div class="art"><div class="crop"><div class="iphone"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/week-720.webp" srcset="/assets/img/{{@code}}/week-360.webp 360w, /assets/img/{{@code}}/week-720.webp 720w" sizes="(max-width: 760px) 70vw, 320px" alt="{{home.alt_week}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div></div>
+      </article>
+      <article class="ftile span3 watchtile reveal">
+        <div class="txt"><h3>Apple Watch</h3><p>{{home.feat_watch_text}}</p></div>
+        <div class="art"><div class="watch"><div class="case"><div class="face" id="watchface"><img class="shot" src="/assets/img/watch-start.webp" alt="{{home.alt_watch_start}}" aria-hidden="true" width="416" height="496" loading="lazy" decoding="async"><img class="shot on" src="/assets/img/watch-step.webp" alt="{{home.alt_watch}}" width="416" height="496" loading="lazy" decoding="async"><img class="shot" src="/assets/img/watch-done.webp" alt="{{home.alt_watch_done}}" aria-hidden="true" width="416" height="496" loading="lazy" decoding="async"></div></div><i class="crown"></i><i class="sbtn"></i></div></div>
+      </article>
+      <article class="ftile span3 widgetstile reveal">
+        <div class="txt"><h3>{{home.feat_widgets}}</h3><p>{{home.feat_widgets_text}}</p></div>
+        <div class="art widgets">
+          <img class="w-s only-light" src="/assets/img/widget-small-light.webp" alt="{{home.alt_widget_s}}" width="196" height="196" loading="lazy" decoding="async"><img class="w-s only-dark" src="/assets/img/widget-small-dark.webp" alt="{{home.alt_widget_s}}" width="196" height="196" loading="lazy" decoding="async">
+          <img class="w-m only-light" src="/assets/img/widget-medium-light.webp" alt="{{home.alt_widget_m}}" width="420" height="196" loading="lazy" decoding="async"><img class="w-m only-dark" src="/assets/img/widget-medium-dark.webp" alt="{{home.alt_widget_m}}" width="420" height="196" loading="lazy" decoding="async">
+          <img class="w-l only-light" src="/assets/img/live-start-light.webp" alt="{{home.alt_live}}" width="418" height="186" loading="lazy" decoding="async"><img class="w-l only-dark" src="/assets/img/live-start-dark.webp" alt="{{home.alt_live}}" width="418" height="186" loading="lazy" decoding="async">
+        </div>
+      </article>
+      <article class="ftile span3 reveal">
+        <div class="txt"><h3>{{home.feat_water}}</h3><p>{{home.feat_water_text}}</p></div>
+        <div class="art water" aria-hidden="true"><span class="skydot"><img class="px glass-px" src="/assets/img/water-glass.webp" alt="" width="10" height="11" loading="lazy"></span><p class="bignum">+1<small>{{home.feat_water_glass}}</small></p></div>
+      </article>
+      <article class="ftile span3 reveal">
+        <div class="txt"><h3>{{home.feat_todos}}</h3><p>{{home.feat_todos_text}}</p></div>
+        <div class="art"><div class="crop"><div class="iphone"><div class="bezel"><div class="glass"><img class="only-light" src="/assets/img/{{@code}}/sidequest-light-720.webp" srcset="/assets/img/{{@code}}/sidequest-light-360.webp 360w, /assets/img/{{@code}}/sidequest-light-720.webp 720w" sizes="(max-width: 760px) 62vw, 300px" alt="{{home.alt_sidequest_crop}}" width="720" height="1565" loading="lazy" decoding="async"><img class="only-dark" src="/assets/img/{{@code}}/sidequest-dark-720.webp" srcset="/assets/img/{{@code}}/sidequest-dark-360.webp 360w, /assets/img/{{@code}}/sidequest-dark-720.webp 720w" sizes="(max-width: 760px) 62vw, 300px" alt="{{home.alt_sidequest_crop}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div></div>
+      </article>
+      <article class="ftile span3 langtile reveal">
+        <div class="txt"><h3>{{home.feat_lang}}</h3><p>{{home.feat_lang_text}}</p></div>
+        <div class="art langs" aria-hidden="true"><p><span lang="en">Not yet.</span> <span lang="de">Noch nicht.</span> <span lang="es">Todavía no.</span> <span lang="fr">Pas encore.</span> <span lang="it">Non ancora.</span> <span lang="pt">Ainda não.</span> <span lang="ja">まだです。</span> <span lang="ko">아직이에요.</span></p></div>
+      </article>
+      <article class="ftile wide reveal">
+        <div class="txt"><h3>{{home.feat_nfc}}</h3><p>{{home.feat_nfc_text}}</p></div>
+        <div class="art"><div class="crop"><div class="iphone"><div class="bezel"><div class="glass"><img class="only-light" src="/assets/img/nfc-light-720.webp" srcset="/assets/img/nfc-light-360.webp 360w, /assets/img/nfc-light-720.webp 720w" sizes="(max-width: 760px) 62vw, 300px" alt="{{home.alt_nfc}}" width="720" height="1565" loading="lazy" decoding="async"><img class="only-dark" src="/assets/img/nfc-dark-720.webp" srcset="/assets/img/nfc-dark-360.webp 360w, /assets/img/nfc-dark-720.webp 720w" sizes="(max-width: 760px) 62vw, 300px" alt="{{home.alt_nfc}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- P82: a short note from Lars (origin story, with his name) goes here once he has written it. -->
+
+<section id="faq" class="sec" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="sechead reveal"><h2 id="faq-title">{{home.faq_title}}</h2></div>
+    <div class="faq">
+      <details><summary>{{home.faq_friendly_q}}</summary><p>{{home.faq_friendly_a}}</p></details>
+      <details><summary>{{home.faq_devices_q}}</summary><p>{{home.faq_devices_a}}</p></details>
+      <details><summary>{{home.faq_alarm_q}}</summary><p>{{home.faq_alarm_a}} <a href="{{@page:alarm}}">{{home.more_alarm}}</a></p></details>
+      <details><summary>{{home.faq_morning_q}}</summary><p>{{home.faq_morning_a}} <a href="{{@page:routines}}">{{home.more_routines}}</a></p></details>
+      <details><summary>{{home.faq_locks_q}}</summary><p>{{home.faq_locks_a}} <a href="{{@page:applock}}">{{home.more_locks}}</a></p></details>
+      <details><summary>{{home.faq_night_q}}</summary><p>{{home.faq_night_a}} <a href="{{@page:nights}}">{{home.more_nights}}</a></p></details>
+      <details><summary>{{home.faq_calendar_q}}</summary><p>{{home.faq_calendar_a}}</p></details>
+      <details><summary>{{home.faq_data_q}}</summary><p>{{home.faq_data_a}}</p></details>
+      <details><summary>{{home.faq_lang_q}}</summary><p>{{home.faq_lang_a}}</p></details>
+      <details><summary>{{home.faq_a11y_q}}</summary><p>{{home.faq_a11y_a}}</p></details>
+      <details><summary>{{home.faq_android_q}}</summary><p>{{home.faq_android_a}}</p></details>
+    </div>
+    <p class="faq-more">{{home.faq_more}}</p>
+  </div>
+</section>
+
+<section id="cta" class="sec" aria-labelledby="cta-title">
+  <div class="wrap">
+    <h2 id="cta-title">{{home.cta_title_1}}</h2>
+    <ul class="chips" aria-label="{{home.chips_label}}"><li><b>iPhone</b> · {{home.chip_iphone}}</li><li><b>Apple Watch</b> · {{home.chip_watch}}</li><li><b>Android</b> · {{home.chip_android}}</li></ul>
+    <div class="cta-actions">
+      <a class="badge" href="{{@appstore}}" {{@evs:cta}}><img src="/assets/img/app-store-badge-{{@code}}.svg" alt="{{common.store_badge_alt}}" width="120" height="40"></a>
+      <p>{{home.cta_note}}</p>
+    </div>
+  </div>
+  <div class="cta-device"><div class="iphone reveal"><div class="bezel"><div class="glass"><img src="/assets/img/{{@code}}/piggy-720.webp" srcset="/assets/img/{{@code}}/piggy-360.webp 360w, /assets/img/{{@code}}/piggy-720.webp 720w" sizes="(max-width: 916px) 220px, (max-width: 1333px) 24vw, 320px" alt="{{home.alt_cta}}" width="720" height="1565" loading="lazy" decoding="async"></div></div></div></div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="note">{{common.footer_note}}</p>
+    <div class="row">
+      <span>© 2026 Not Yet</span>
+      <nav aria-label="{{common.footer_features}}"><ul><li><a href="{{@page:alarm}}">{{common.link_alarm}}</a></li><li><a href="{{@page:applock}}">{{common.link_applock}}</a></li><li><a href="{{@page:routines}}">{{common.link_routines}}</a></li><li><a href="{{@page:nights}}">{{common.link_nights}}</a></li><li><a href="{{@page:week}}">{{common.link_week}}</a></li></ul></nav>
+      <nav aria-label="{{common.footer_label}}"><ul><li><a href="{{@root}}imprint/">{{common.imprint}}</a></li><li><a href="{{@root}}privacy/">{{common.privacy}}</a></li><li><a href="{{@root}}support/">{{common.support}}</a></li></ul></nav>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

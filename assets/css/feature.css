@@ -1,0 +1,62 @@
+/* Not Yet · feature pages (alarm, app lock …), all languages.
+   Builds on site.css and home.css (phones, badge, FAQ, Fraunces); only the page layout lives here. */
+
+/* Hero: text left, one phone right; stacked on phones. */
+.fhero { background: linear-gradient(var(--hero-bg) 60%, var(--bg)); padding-block: clamp(28px, 4vw, 56px) clamp(48px, 7vw, 96px); overflow: hidden; }
+.fhero .wrap { display: grid; grid-template-columns: 1fr minmax(220px, 300px); gap: clamp(32px, 6vw, 88px); align-items: center; }
+.fhero .txt { display: grid; gap: 18px; justify-items: start; }
+.fhero h1 { font: 500 clamp(2.5rem, 1.5rem + 3.8vw, 4.75rem)/1.04 "Fraunces Soft", Georgia, "Times New Roman", serif; letter-spacing: -.025em; }
+.fhero h1 em { display: block; font-style: italic; color: var(--accent-ink); letter-spacing: -.03em; }
+.fhero h1:lang(ja) { font-family: "Fraunces Soft", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", serif; font-weight: 600; font-size: clamp(2.1rem, 1.3rem + 3vw, 3.75rem); line-height: 1.2; }
+.fhero h1:lang(ko) { font-family: "Fraunces Soft", var(--sans); font-weight: 700; font-size: clamp(2.1rem, 1.3rem + 3vw, 3.75rem); line-height: 1.2; }
+.fhero h1:lang(ja) em, .fhero h1:lang(ko) em { font-style: normal; letter-spacing: inherit; }
+.fhero .lead { max-width: 36ch; }
+.fhero .badge { margin: 6px 0 0 -6px; }
+.feature .nav { background: color-mix(in srgb, var(--hero-bg) 85%, transparent); }
+
+/* Breadcrumb */
+.crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; font-size: .875rem; color: var(--ink-3); }
+.crumbs li + li::before { content: "\203A"; margin-right: 4px; }
+.crumbs a { color: var(--ink-2); text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Phones beside the text */
+.fhero .art, .fsec .art { justify-self: center; width: 100%; max-width: 300px; }
+
+/* Sections */
+.fsec { padding-block: clamp(56px, 8vw, 112px); }
+.fsec.alt { background: var(--bg-alt); }
+.fsec .wrap { display: grid; gap: clamp(32px, 6vw, 88px); align-items: start; }
+.fsec .wrap:has(> .art) { grid-template-columns: 1fr minmax(220px, 300px); align-items: center; }
+.fsec .narrow { max-width: 820px; display: block; }
+.fsec h2 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.25rem); line-height: 1.06; max-width: 20ch; }
+.fsec .narrow p { margin-top: 18px; font-size: clamp(1.0625rem, 1rem + .3vw, 1.25rem); line-height: 1.55; color: var(--ink-2); max-width: 62ch; }
+.fsec .narrow a, .fsec .note a { color: var(--accent-ink); text-underline-offset: 3px; }
+.fsec .intro { margin-top: 16px; font-size: clamp(1.0625rem, 1rem + .3vw, 1.25rem); color: var(--ink-2); max-width: 52ch; }
+.points { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 0 32px; }
+.fsec .wrap:has(> .art) .points { grid-template-columns: 1fr; }
+.points li { padding-block: 18px; border-top: 1px solid var(--hair); }
+.points h3 { font-size: 1.125rem; letter-spacing: -.02em; line-height: 1.25; }
+.points p { margin-top: 4px; color: var(--ink-2); max-width: 52ch; }
+.fsec .note { margin-top: 18px; color: var(--ink-3); font-size: .9375rem; }
+
+/* FAQ heading and the closing badge */
+.feature #faq h2 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.25rem); line-height: 1.06; text-align: center; margin-bottom: clamp(24px, 4vw, 48px); }
+.fcta { padding-block: clamp(64px, 9vw, 128px); text-align: center; background: var(--glow); }
+.fcta .wrap { display: grid; justify-items: center; gap: 20px; }
+.fcta h2 { font: 500 clamp(2.25rem, 1.4rem + 3.2vw, 4rem)/1.05 "Fraunces Soft", Georgia, serif; letter-spacing: -.025em; }
+.fcta h2:lang(ja), .fcta h2:lang(ko) { font-family: var(--sans); font-weight: 700; letter-spacing: 0; }
+
+/* Footer: the feature links next to the legal ones */
+.footer .row { align-items: center; }
+
+/* Press page: app icon in the hero, fact sheet, screenshots */
+.fsec .narrow h3 { margin-top: 28px; font-size: 1.125rem; letter-spacing: -.02em; }
+.fsec .narrow h3 + p { margin-top: 6px; }
+
+@media (max-width: 760px) {
+  .fhero .wrap, .fsec .wrap:has(> .art) { grid-template-columns: 1fr; }
+  .fhero .art, .fsec .art { max-width: 220px; }
+  .fhero .lead { max-width: none; }
+  .badge img { height: 50px; }
+}
